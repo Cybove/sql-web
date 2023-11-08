@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Register - SQL Web App</title>
+</head>
+
+<body>
+    <h1 class="header-text">Register</h1>
+    <div id="register-form" class="register-form">
+        <form hx-post="/api/auth/register" hx-trigger="submit" hx-swap="innerHTML" hx-target="#error-box">
+            <div>
+                <input type="text" name="username" class="username-input" placeholder="Username">
+            </div>
+            <div>
+                <input type="password" name="password" class="password-input" placeholder="Password">
+            </div>
+            <div>
+                <input type="password" name="confirmPassword" class="password-input" placeholder="Confirm Password">
+            </div>
+            <div>
+                <div>
+                    <button type="submit" class="register-button">Register</button>
+                </div>
+                <div>
+                    <button type="button" class="login-anchor" onclick="window.location.href = '/'">Back to
+                        Login</button>
+                </div>
+            </div>
+        </form>
+        <div id="success-box" class="success-box"></div>
+        <div id="error-box" class="error-box"></div>
+    </div>
+    <script src="../js/htmx.min.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

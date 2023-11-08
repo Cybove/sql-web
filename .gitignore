@@ -1,0 +1,19 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore the users database file
+src/server/db/users.db
+
+# Ignore build and compiled files
+/build/
+/dist/
+src/client/public/css/styles.css
+
+# Ignore environment-specific configuration files
+.env
+.env.local
+.env.*.local
+
+# Ignore log files
+combined.log
+error.log

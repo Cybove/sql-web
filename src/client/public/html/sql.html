@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>SQL Query - SQL Web App</title>
+</head>
+
+<body class="background">
+    <h1 class="header-text">SQL Query</h1>
+    <div id="sql-form" class="sql-form">
+        <form hx-post="/sql/execute" hx-trigger="submit" hx-target="#sql-results" hx-swap="innerHTML"
+            hx-trigger="onload">
+            <textarea name="query" class="query-input" placeholder="Enter your SQL query here"></textarea>
+            <div>
+                <button type="submit" class="execute-button">Execute</button>
+            </div>
+        </form>
+    </div>
+    <div id="sql-results" class="sql-results">
+    </div>
+    <button class="logout-button" onclick="window.location.href = '/' ">Logout</button>
+    <script src="../js/htmx.min.js"></script>
+    <script src="../js/sql.js"></script>
+</body>
+
+</html>

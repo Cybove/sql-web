@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Login - SQL Web App</title>
+</head>
+
+<body>
+    <h1 class="header-text">Login</h1>
+    <div id="login-form" class="login-form">
+        <form hx-post="/api/auth/login" hx-trigger="submit" hx-swap="innerHTML" hx-target="#error-box">
+            <div>
+                <input type="text" name="username" class="username-input" placeholder="Username">
+            </div>
+            <div>
+                <input type="password" name="password" class="password-input" placeholder="Password">
+            </div>
+            <div>
+                <select name="databaseType" class="database-select">
+                    <option value="mssql">MSSQL</option>
+                    <option value="mysql">MySQL</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <button type="submit" class="login-button">Login</button>
+                </div>
+                <div>
+                    <button type="button" class="register-anchor"
+                        onclick="window.location.href = '/register'">Register</button>
+                </div>
+            </div>
+        </form>
+        <div id="success-box" class="success-box"></div>
+        <div id="error-box" class="error-box"></div>
+    </div>
+    <script src="../js/htmx.min.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>
