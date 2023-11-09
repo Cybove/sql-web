@@ -1,5 +1,6 @@
 const sqlResults = document.getElementById('sql-results');
 const textarea = document.querySelector('.query-input');
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 function createTable(data) {
     const tableContainer = document.createElement('div');
@@ -138,6 +139,20 @@ function changeHeaderText() {
         document.querySelector('.header-text').textContent = 'MySQL';
     }
 }
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark');
+    const isDarkMode = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+if (isDarkMode) {
+    document.body.classList.add('dark');
+}
+
+darkModeToggle.addEventListener('click', toggleDarkMode);
 
 textarea.addEventListener('input', () => {
     const numberOfLines = textarea.value.split('\n').length;

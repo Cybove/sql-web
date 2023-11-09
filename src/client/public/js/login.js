@@ -52,4 +52,19 @@ function handleLoginFormSubmission() {
     document.body.addEventListener('htmx:afterOnLoad', handleAfterOnLoad);
 }
 
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark');
+    const isDarkMode = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+if (isDarkMode) {
+    document.body.classList.add('dark');
+}
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('click', toggleDarkMode);
+
 handleLoginFormSubmission();

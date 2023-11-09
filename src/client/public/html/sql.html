@@ -8,8 +8,8 @@
     <title>SQL Query - SQL Web App</title>
 </head>
 
-<body class="background">
-    <h1 class="header-text">SQL Query</h1>
+<body>
+    <h1 class="header-text"></h1>
     <div id="sql-form" class="sql-form">
         <form hx-post="/sql/execute" hx-trigger="submit" hx-target="#sql-results" hx-swap="innerHTML"
             hx-trigger="onload">
@@ -21,6 +21,7 @@
     </div>
     <div id="sql-results" class="sql-results">
     </div>
+    <button id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
     <button class="logout-button" onclick="window.location.href = '/' ">Logout</button>
     <script src="../js/htmx.min.js"></script>
     <script src="../js/sql.js"></script>

@@ -47,6 +47,21 @@ function handleAfterOnLoad(event) {
     }
 }
 
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark');
+    const isDarkMode = body.classList.contains('dark');
+    localStorage.setItem('darkMode', isDarkMode);
+}
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+if (isDarkMode) {
+    document.body.classList.add('dark');
+}
+
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+darkModeToggle.addEventListener('click', toggleDarkMode);
+
 document.body.addEventListener('htmx:configRequest', function (event) {
     const target = event.detail.elt;
 

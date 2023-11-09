@@ -2,24 +2,36 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+.dark {
+    @apply bg-gray-800 text-white;
+}
+
+.background {
+    @apply bg-slate-500 dark:bg-gray-800;
+}
+
 .header-text {
-    @apply text-4xl text-center font-bold text-black mt-8;
+    @apply text-4xl text-center font-bold text-black mt-8 dark:text-white;
+}
+
+.dark-mode-toggle {
+    @apply absolute top-7 right-32 bg-gray-200 text-black p-2 rounded-lg mt-2 hover:bg-gray-300 focus:outline-none focus:ring focus:border-gray-400 block text-center mx-auto shadow-md shadow-gray-700 dark:bg-gray-500 dark:text-white dark:hover:bg-gray-400 dark:focus:ring-gray-800;
 }
 
 .login-form {
-    @apply rounded px-8 pt-6 pb-8 mb-4 flex flex-col m-auto w-3/4 text-center mt-4;
+    @apply rounded px-8 pt-6 pb-8 mb-4 flex flex-col m-auto w-3/4 text-center mt-4 dark:bg-gray-800 dark:text-white;
 }
 
 .username-input {
-    @apply border p-2 w-1/4 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg;
+    @apply border p-2 w-1/4 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg dark:bg-gray-700 dark:text-white;
 }
 
 .password-input {
-    @apply border p-2 w-1/4 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg;
+    @apply border p-2 w-1/4 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg dark:bg-gray-700 dark:text-white;
 }
 
 .database-select {
-    @apply border p-2 w-2/12 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg;
+    @apply border p-2 w-2/12 mx-auto mb-4 rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg dark:bg-gray-700 dark:text-white;
 }
 
 .login-button {
@@ -35,7 +47,7 @@
 }
 
 .register-form {
-    @apply rounded px-8 pt-6 pb-8 mb-4 flex flex-col m-auto w-3/4 text-center mt-4;
+    @apply rounded px-8 pt-6 pb-8 mb-4 flex flex-col m-auto w-3/4 text-center mt-4 dark:bg-gray-800 dark:text-white;
 }
 
 .register-button {
@@ -43,63 +55,59 @@
 }
 
 .success-box {
-    @apply bg-green-500 border-4 border-green-700 w-1/5 mx-auto text-white text-center font-bold text-base p-1 m-1 rounded shadow-md shadow-green-700 hidden;
+    @apply bg-green-500 border-4 border-green-700 w-1/5 mx-auto text-white text-center font-bold text-base p-1 m-1 rounded shadow-md shadow-green-700 hidden dark:bg-green-600 dark:border-green-800 dark:shadow-green-800;
 }
 
 .error-box {
-    @apply bg-red-500 border-4 border-red-700 w-1/5 mx-auto text-white text-center font-bold text-base p-1 m-1 rounded shadow-md shadow-red-700 hidden;
-}
-
-.background {
-    @apply bg-slate-100;
+    @apply bg-red-500 border-4 border-red-700 w-1/5 mx-auto text-white text-center font-bold text-base p-1 m-1 rounded shadow-md shadow-red-700 hidden dark:bg-red-600 dark:border-red-800 dark:shadow-red-800;
 }
 
 .sql-form {
-    @apply rounded px-8 pt-6 pb-8 flex flex-col m-auto w-4/5 text-center mt-3;
+    @apply rounded px-8 pt-6 pb-8 flex flex-col m-auto w-4/5 text-center mt-3 dark:bg-gray-800 dark:text-white;
 }
 
 .sql-results {
-    @apply text-center mb-16;
+    @apply text-center mb-16 dark:bg-gray-800 dark:text-white;
 }
 
 .table-container {
-    @apply w-11/12 mx-auto bg-white shadow-md overflow-x-auto;
+    @apply w-11/12 mx-auto bg-white shadow-md overflow-x-auto dark:bg-gray-700 dark:text-white;
 }
 
 .table {
-    @apply w-full border-collapse table-auto will-change-auto;
+    @apply w-full border-collapse table-auto will-change-auto dark:bg-gray-700 dark:text-white;
 }
 
 .th {
-    @apply bg-blue-200 text-blue-800 border-t border-r border-l border-blue-500 p-4;
+    @apply bg-blue-200 text-blue-800 border-t border-r border-l border-b border-blue-500 p-4 dark:bg-indigo-800 dark:text-indigo-300 dark:border-indigo-950;
 }
 
 .gray-row {
-    @apply bg-gray-100 border p-4 text-center whitespace-nowrap;
+    @apply bg-gray-100 border p-4 text-center whitespace-nowrap dark:bg-gray-700 dark:text-white;
 }
 
 .white-row {
-    @apply bg-white border p-4 text-center whitespace-nowrap;
+    @apply bg-white border p-4 text-center whitespace-nowrap dark:bg-gray-600 dark:text-white;
 }
 
 .td {
-    @apply border border-opacity-50 border-black p-2 m-2 w-auto;
+    @apply border border-opacity-50 border-black p-2 m-2 w-auto dark:text-white;
 }
 
 .query-input {
-    @apply border p-2 w-3/4 mx-auto rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg;
+    @apply border p-2 w-3/4 mx-auto rounded-lg focus:outline-none focus:ring focus:border-blue-500 shadow-lg dark:bg-gray-700 dark:text-white;
 }
 
 .execute-button {
-    @apply bg-blue-500 text-white p-2 rounded-lg mt-6 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700 block text-center mx-auto shadow-md shadow-blue-700;
+    @apply bg-blue-500 text-white p-2 rounded-lg mt-6 hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-700 block text-center mx-auto shadow-md shadow-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
 }
 
 .logout-button {
-    @apply bg-red-500 absolute top-7 right-10 text-white p-2 rounded-lg mt-2 hover:bg-red-600 focus:outline-none focus:ring focus:border-red-700 block text-center mx-auto shadow-md shadow-red-700;
+    @apply bg-red-500 absolute top-7 right-10 text-white p-2 rounded-lg mt-2 hover:bg-red-600 focus:outline-none focus:ring focus:border-red-700 block text-center mx-auto shadow-md shadow-red-700 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800;
 }
 
 .text-null {
-    @apply text-gray-400;
+    @apply text-gray-400 dark:text-gray-300;
 }
 
 .text-long {
@@ -108,29 +116,29 @@
 }
 
 .no-data {
-    @apply text-center font-bold text-xl text-red-500 border-2 border-gray-300 p-4 bg-gray-100;
+    @apply text-center font-bold text-xl text-red-500 border-2 border-gray-300 p-4 bg-gray-100 dark:bg-gray-700 dark:text-white;
 }
 
 .error-details {
-    @apply bg-red-500 w-2/5 mx-auto overflow-auto px-4 border-2 border-red-700 rounded-xl shadow-lg shadow-red-700 mb-4;
+    @apply bg-red-500 w-2/5 mx-auto overflow-auto px-4 border-2 border-red-700 rounded-xl shadow-lg shadow-red-700 mb-4 dark:bg-red-600 dark:border-red-800 dark:shadow-red-800;
 }
 
 .error-summary {
-    @apply text-white text-2xl text-center p-4 font-bold;
+    @apply text-white text-2xl text-center p-4 font-bold dark:text-white;
 }
 
 .error-pre {
-    @apply text-black text-base font-sans font-bold mb-6 px-4 overflow-ellipsis;
+    @apply text-black text-base font-sans font-bold mb-6 px-4 overflow-ellipsis dark:text-black;
 }
 
 .info-details {
-    @apply bg-green-500 w-2/5 mx-auto overflow-auto px-4 border-2 border-green-700 rounded-xl shadow-lg shadow-green-700 mb-4;
+    @apply bg-green-500 w-2/5 mx-auto overflow-auto px-4 border-2 border-green-700 rounded-xl shadow-lg shadow-green-700 mb-4 dark:bg-green-600 dark:border-green-800 dark:shadow-green-800;
 }
 
 .info-summary {
-    @apply text-white text-2xl text-center p-4 font-bold;
+    @apply text-white text-2xl text-center p-4 font-bold dark:text-black;
 }
 
 .info-pre {
-    @apply text-black text-base font-sans font-bold mb-6 px-4 overflow-ellipsis;
+    @apply text-black text-base font-sans font-bold mb-6 px-4 overflow-ellipsis dark:text-white;
 }
